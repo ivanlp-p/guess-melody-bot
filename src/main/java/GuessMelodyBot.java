@@ -19,10 +19,53 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
 
             SendMessage sendMessage = new SendMessage();
             sendMessage.setChatId(chatId);
-            if (message.equals("/start"))
+            if (message.equals("/start")) {
                 sendMessage.setText("Привет это бот Угадай мелодию!");
-            else {
-                setButton(sendMessage, update);
+                ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+                replyKeyboardMarkup.setSelective(true);
+                replyKeyboardMarkup.setResizeKeyboard(true);
+                replyKeyboardMarkup.setOneTimeKeyboard(false);
+
+                List<KeyboardRow> keyboard = new ArrayList<>();
+                String member = "";
+                if (update.getMessage().getContact() != null) {
+                    Contact contact = update.getMessage().getContact();
+                    if (contact.getFirstName() != null) {
+                        member = member + " " + contact.getFirstName();
+                    }
+                    if (contact.getLastName() != null) {
+                        member = member + " " + contact.getLastName();
+                    }
+                }
+                KeyboardRow keyboardFirstRow = new KeyboardRow();
+                keyboardFirstRow.add(new KeyboardButton("Ответить!!!")
+                        .setText("Готов ответить + " + member));
+                keyboard.add(keyboardFirstRow);
+                replyKeyboardMarkup.setKeyboard(keyboard);
+                sendMessage.setReplyMarkup(replyKeyboardMarkup);
+            } else {
+                ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+                replyKeyboardMarkup.setSelective(true);
+                replyKeyboardMarkup.setResizeKeyboard(true);
+                replyKeyboardMarkup.setOneTimeKeyboard(false);
+
+                List<KeyboardRow> keyboard = new ArrayList<>();
+                String member = "";
+                if (update.getMessage().getContact() != null) {
+                    Contact contact = update.getMessage().getContact();
+                    if (contact.getFirstName() != null) {
+                        member = member + " " + contact.getFirstName();
+                    }
+                    if (contact.getLastName() != null) {
+                        member = member + " " + contact.getLastName();
+                    }
+                }
+                KeyboardRow keyboardFirstRow = new KeyboardRow();
+                keyboardFirstRow.add(new KeyboardButton("Ответить!!!")
+                        .setText("Готов ответить + " + member));
+                keyboard.add(keyboardFirstRow);
+                replyKeyboardMarkup.setKeyboard(keyboard);
+                sendMessage.setReplyMarkup(replyKeyboardMarkup);
             }
 
             try {
