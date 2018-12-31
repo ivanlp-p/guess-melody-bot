@@ -27,31 +27,18 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
                 replyKeyboardMarkup.setOneTimeKeyboard(false);
 
                 List<KeyboardRow> keyboard = new ArrayList<>();
-                String member = "";
-                if (update.getMessage().getContact() != null) {
-                    Contact contact = update.getMessage().getContact();
-                    if (contact.getFirstName() != null) {
-                        member = member + " " + contact.getFirstName();
-                    }
-                    if (contact.getLastName() != null) {
-                        member = member + " " + contact.getLastName();
-                    }
-                }
-                KeyboardRow keyboardFirstRow = new KeyboardRow();
-                keyboardFirstRow.add(new KeyboardButton("Ответить!!!")
-                        .setText("Готов ответить + " + member));
-                keyboard.add(keyboardFirstRow);
-                replyKeyboardMarkup.setKeyboard(keyboard);
-                sendMessage.setReplyMarkup(replyKeyboardMarkup);
-            } else {
-                ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
-                replyKeyboardMarkup.setSelective(true);
-                replyKeyboardMarkup.setResizeKeyboard(true);
-                replyKeyboardMarkup.setOneTimeKeyboard(false);
 
-                List<KeyboardRow> keyboard = new ArrayList<>();
+                KeyboardRow keyboardFirstRow = new KeyboardRow();
+                keyboardFirstRow.add(new KeyboardButton("Ответить!!!"));
+                keyboard.add(keyboardFirstRow);
+
+                replyKeyboardMarkup.setKeyboard(keyboard);
+
+                sendMessage.setReplyMarkup(replyKeyboardMarkup);
+            } else if (message.equals("Ответить!!!")) {
                 String member = "";
-                if (update.getMessage().getContact() != null) {
+
+                if (update.getMessage().hasContact()) {
                     Contact contact = update.getMessage().getContact();
                     if (contact.getFirstName() != null) {
                         member = member + " " + contact.getFirstName();
@@ -59,13 +46,11 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
                     if (contact.getLastName() != null) {
                         member = member + " " + contact.getLastName();
                     }
+                    if (member.equals(""))
+                        member = message + update.getMessage().getContact().getPhoneNumber();
                 }
-                KeyboardRow keyboardFirstRow = new KeyboardRow();
-                keyboardFirstRow.add(new KeyboardButton("Ответить!!!")
-                        .setText("Готов ответить + " + member));
-                keyboard.add(keyboardFirstRow);
-                replyKeyboardMarkup.setKeyboard(keyboard);
-                sendMessage.setReplyMarkup(replyKeyboardMarkup);
+                String targetText = "Готов ответить + " + member;
+                sendMessage.setText(targetText);
             }
 
             try {
