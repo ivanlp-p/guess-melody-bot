@@ -41,7 +41,7 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
         return "773196873:AAHQbMH-tlQPEd9uWqFEOuGa2q9hQh20wwc";
     }
 
-    private SendMessage setButton(SendMessage sendMessage, Update update) {
+    private synchronized void setButton(SendMessage sendMessage, Update update) {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         replyKeyboardMarkup.setSelective(true);
         replyKeyboardMarkup.setResizeKeyboard(true);
@@ -62,7 +62,5 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
                 .setText("Готов ответить + " + member));
         keyboard.add(keyboardFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboard);
-
-        return sendMessage;
     }
 }
