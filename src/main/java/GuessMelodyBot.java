@@ -14,6 +14,7 @@ import java.util.List;
 public class GuessMelodyBot extends TelegramLongPollingBot {
 
     public void onUpdateReceived(Update update) {
+        System.out.println(update);
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText();
             Long chatId = update.getMessage().getChatId();
