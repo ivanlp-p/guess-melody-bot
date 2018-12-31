@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="255a2667-6438-428c-9eb4-8c1815f12d0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GuessMelodyBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GuessMelodyBot.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/GuessMelodyBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+            <state relative-caret-position="136">
+              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2262#2263#0" expanded="true" />
@@ -162,7 +161,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546260572137" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546261103903" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -258,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546257555297</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fix member.">
+      <created>1546260626688</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1546260626688</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -337,8 +343,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GuessMelodyBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        <state relative-caret-position="136">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2262#2263#0" expanded="true" />

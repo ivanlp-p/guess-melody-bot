@@ -22,7 +22,7 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
             if (message.equals("/start")) {
                 sendMessage.setText("Привет это бот Угадай мелодию!");
                 ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
-                replyKeyboardMarkup.setSelective(true);
+                replyKeyboardMarkup.setSelective(false);
                 replyKeyboardMarkup.setResizeKeyboard(true);
                 replyKeyboardMarkup.setOneTimeKeyboard(false);
 
