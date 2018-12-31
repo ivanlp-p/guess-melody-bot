@@ -12,7 +12,10 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
 
             SendMessage sendMessage = new SendMessage();
             sendMessage.setChatId(chatId);
-            sendMessage.setText(message);
+            if (message.equals("/start"))
+                sendMessage.setText("Привет это бот Угадай мелодию!");
+            else
+                sendMessage.setText(message);
 
             try {
                 execute(sendMessage);
