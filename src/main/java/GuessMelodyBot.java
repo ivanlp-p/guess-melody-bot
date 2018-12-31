@@ -50,7 +50,6 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
                 }
                 String targetText = "Готов ответить " + member;
                 sendMessage.setText(targetText);
-                sendMessage.setReplyToMessageId(null);
             }
 
             try {
