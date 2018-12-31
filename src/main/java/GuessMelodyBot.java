@@ -2,6 +2,7 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Contact;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
@@ -16,7 +17,6 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText();
             Long chatId = update.getMessage().getChatId();
-
             SendMessage sendMessage = new SendMessage();
             sendMessage.setChatId(chatId);
             if (message.equals("/start")) {
@@ -37,11 +37,8 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
                 sendMessage.setReplyMarkup(replyKeyboardMarkup);
             } else if (message.equals("Ответить!!!")) {
                 String member = "";
-                System.out.println("Contact = " + update.getMessage().hasContact());
-                System.out.println("Contact = " + update.getMessage().getContact().getFirstName());
-                System.out.println("Contact = " + update.getMessage().getContact().getLastName());
-                if (update.getMessage().hasContact()) {
-                    Contact contact = update.getMessage().getContact();
+                if (update.getMessage().getFrom() != null) {
+                    User contact = update.getMessage().getFrom();
                     if (contact.getFirstName() != null) {
                         member = member + " " + contact.getFirstName();
                     }
@@ -51,7 +48,7 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
                     if (member.equals(""))
                         member = message + update.getMessage().getContact().getPhoneNumber();
                 }
-                String targetText = "Готов ответить + " + member;
+                String targetText = "Готов ответить " + member;
                 sendMessage.setText(targetText);
             }
 
