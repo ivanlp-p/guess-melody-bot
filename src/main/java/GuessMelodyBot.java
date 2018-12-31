@@ -37,7 +37,9 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
                 sendMessage.setReplyMarkup(replyKeyboardMarkup);
             } else if (message.equals("Ответить!!!")) {
                 String member = "";
-
+                System.out.println("Contact = " + update.getMessage().hasContact());
+                System.out.println("Contact = " + update.getMessage().getContact().getFirstName());
+                System.out.println("Contact = " + update.getMessage().getContact().getLastName());
                 if (update.getMessage().hasContact()) {
                     Contact contact = update.getMessage().getContact();
                     if (contact.getFirstName() != null) {
