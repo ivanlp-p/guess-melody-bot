@@ -36,19 +36,7 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
 
                 sendMessage.setReplyMarkup(replyKeyboardMarkup);
             } else if (message.equals("Ответить!!!")) {
-                String member = "";
-                if (update.getMessage().getFrom() != null) {
-                    User contact = update.getMessage().getFrom();
-                    if (contact.getFirstName() != null) {
-                        member = member + " " + contact.getFirstName();
-                    }
-                    if (contact.getLastName() != null) {
-                        member = member + " " + contact.getLastName();
-                    }
-                    if (member.equals(""))
-                        member = message + update.getMessage().getContact().getPhoneNumber();
-                }
-                String targetText = "Готов ответить " + member;
+                String targetText = "Готов ответить";
                 sendMessage.setText(targetText);
             }
 
@@ -66,28 +54,5 @@ public class GuessMelodyBot extends TelegramLongPollingBot {
 
     public String getBotToken() {
         return "773196873:AAHQbMH-tlQPEd9uWqFEOuGa2q9hQh20wwc";
-    }
-
-    private synchronized void setButton(SendMessage sendMessage, Update update) {
-        ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
-        replyKeyboardMarkup.setSelective(true);
-        replyKeyboardMarkup.setResizeKeyboard(true);
-        replyKeyboardMarkup.setOneTimeKeyboard(false);
-        sendMessage.setReplyMarkup(replyKeyboardMarkup);
-
-        List<KeyboardRow> keyboard = new ArrayList<>();
-        String member = "";
-        if (update.getMessage().getContact() != null) {
-            Contact contact = update.getMessage().getContact();
-            if (contact.getFirstName() != null)
-                member = member + " " + contact.getFirstName();
-            if (contact.getLastName() != null)
-                member = member + " " + contact.getLastName();
-        }
-        KeyboardRow keyboardFirstRow = new KeyboardRow();
-        keyboardFirstRow.add(new KeyboardButton("Ответить!!!")
-                .setText("Готов ответить + " + member));
-        keyboard.add(keyboardFirstRow);
-        replyKeyboardMarkup.setKeyboard(keyboard);
     }
 }

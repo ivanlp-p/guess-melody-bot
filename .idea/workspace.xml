@@ -37,11 +37,11 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/GuessMelodyBot.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="466">
-              <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2833#2834#0" expanded="true" />
-                <element signature="e#2938#2939#0" expanded="true" />
+                <element signature="e#2262#2263#0" expanded="true" />
+                <element signature="e#2367#2368#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,7 +162,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546257537515" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546260572137" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -251,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546257069806</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fix member.">
+      <created>1546257555297</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1546257555297</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -318,14 +325,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="1256" selection-start-line="1256" selection-end-line="1256" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots-meta/4.1/telegrambots-meta-4.1.jar!/org/telegram/telegrambots/meta/generics/LongPollingBot.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GuessMelodyBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2833#2834#0" expanded="true" />
-            <element signature="e#2938#2939#0" expanded="true" />
+            <element signature="e#2262#2263#0" expanded="true" />
+            <element signature="e#2367#2368#0" expanded="true" />
           </folding>
         </state>
       </provider>
